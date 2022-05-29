@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:kidoli/Constant/Constant_var.dart';
+import 'package:kidoli/Main_packages/StudentEdit_profile.dart';
+
+var scaffoldkey = GlobalKey<ScaffoldState>();
 
 class StudentProfile extends StatefulWidget {
   const StudentProfile({Key? key}) : super(key: key);
@@ -12,7 +15,6 @@ class _StudentProfileState extends State<StudentProfile> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
     return Scaffold(
       body: SafeArea(
         child: Stack(
@@ -76,31 +78,41 @@ class _StudentProfileState extends State<StudentProfile> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                                right: 10, left: 10, bottom: 10),
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              elevation: 8,
-                              color: purple,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10, right: 10, left: 10),
-                                    child: Image.asset('assets/user.png',
-                                        height: 100),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 10),
-                                    child: Text(
-                                      "Edit Profile",
-                                      style: TextStyle(
-                                        fontSize: 17,
-                                      ),
+                                right: 10 , left: 10, bottom: 10),
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const StudentEditProfile()),
+                                );
+                              },
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                elevation: 8,
+                                color: purple,
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 10, right: 10, left: 10),
+                                      child: Image.asset('assets/user.png',
+                                          height: 100),
                                     ),
-                                  )
-                                ],
+                                    Padding(
+                                      padding: const EdgeInsets.only(top: 10),
+                                      child: Text(
+                                        "Edit Profile",
+                                        style: TextStyle(
+                                          fontSize: 17,
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                           ),

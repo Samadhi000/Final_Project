@@ -2,12 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:kidoli/Main_packages/Profile.dart';
 import 'package:kidoli/Welcome/Login_page.dart';
 import 'package:kidoli/video_player/vid_new.dart';
 import 'package:line_icons/line_icons.dart';
 
 import '../Main_packages/Home.dart';
+import '../Main_packages/Upload_videos.dart';
 import '../Main_packages/library.dart';
 
 class bottom_nav_bar extends StatefulWidget {

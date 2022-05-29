@@ -4,11 +4,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../Components/Botttom_nav_bar.dart';
 import '../Components/side_menu_bar.dart';
 import '../Constant/Constant_var.dart';
-import '../Welcome/Login_page.dart';
-
 
 var scaffoldkey = GlobalKey<ScaffoldState>();
 
@@ -28,8 +25,6 @@ class _home_mainState extends State<home_main> {
   //   'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
   //   'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
   // ];
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +54,7 @@ class _home_mainState extends State<home_main> {
           child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 8,right: 8,top: 8),
+            padding: const EdgeInsets.only(left: 8, right: 8, top: 8),
             child: Container(
               height: 180,
               child: GridView.count(
@@ -150,24 +145,21 @@ class _home_mainState extends State<home_main> {
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),
           ),
           Container(
-
-
-            child: CarouselSlider(options: CarouselOptions(
-              autoPlay: true,
-              aspectRatio: 2/1,
-              enlargeCenterPage: true,
-            ),
-            items: [
-              Image(image: AssetImage('assets/slide.jpg')),
-              Image(image: AssetImage('assets/slide1.jpg'))
-
-            ],
+            child: CarouselSlider(
+              options: CarouselOptions(
+                autoPlay: true,
+                aspectRatio: 2 / 1,
+                enlargeCenterPage: true,
+              ),
+              items: [
+                Image(image: AssetImage('assets/slide.jpg')),
+                Image(image: AssetImage('assets/slide1.jpg'))
+              ],
             ),
           )
         ],

@@ -121,12 +121,12 @@ class _ProfileState extends State<Profile> {
                             Text(
                               'BSc in Education',
                               style:
-                              TextStyle(fontSize: 15, color: Colors.white),
+                                  TextStyle(fontSize: 15, color: Colors.white),
                             ),
                             Text(
                               'English Teacher',
                               style:
-                              TextStyle(fontSize: 15, color: Colors.white),
+                                  TextStyle(fontSize: 15, color: Colors.white),
                             ),
                           ],
                         )
@@ -203,35 +203,43 @@ class _ProfileState extends State<Profile> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(
-                                right: 10, left: 10, bottom: 10),
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              elevation: 8,
-                              color: purple,
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10, right: 10, left: 10),
-                                    child: Image.asset('assets/upload.png',
-                                        height: 100),
+                              padding: const EdgeInsets.only(
+                                  right: 10, left: 10, bottom: 10),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Profile()),
+                                  );
+                                },
+                                child: Card(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 10),
-                                    child: Text(
-                                      "Upload Videos",
-                                      style: TextStyle(
-                                        fontSize: 17,
+                                  elevation: 8,
+                                  color: purple,
+                                  child: Column(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 10, right: 10, left: 10),
+                                        child: Image.asset('assets/upload.png',
+                                            height: 100),
                                       ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10),
+                                        child: Text(
+                                          "Upload Videos",
+                                          style: TextStyle(
+                                            fontSize: 17,
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              )),
                           Padding(
                             padding: const EdgeInsets.only(
                                 right: 10, left: 10, bottom: 10),
@@ -301,7 +309,6 @@ class _ProfileState extends State<Profile> {
           ],
         ),
       ),
-
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _selectFolder(),
         label: const Text('Upload Video'),
